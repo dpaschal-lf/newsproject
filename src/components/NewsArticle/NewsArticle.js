@@ -39,10 +39,9 @@ class NewsArticle extends React.Component{
         this.props.markCallback( this.props.data.url );
     }
     render(){
-        console.log(this.props.data);
         let {title, urlToImage: imageURL} = this.props.data;
         const style = {
-            'background-image' : `url(${imageURL})`
+            'backgroundImage' : `url(${imageURL})`
         }
         return(
             <div className="article" style={ style }>
