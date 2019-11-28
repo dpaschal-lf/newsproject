@@ -8,7 +8,7 @@ class NewsArticle extends React.Component{
         this.showModal = this.showModal.bind( this );
         this.state = {
             modalShowing: false,
-            viewed: false
+            viewed: props.checkCallback( props.data.url )
         }
     }
     generateModal(){
@@ -36,6 +36,7 @@ class NewsArticle extends React.Component{
             viewed: true,
             modalShowing: true
         })
+        this.props.markCallback( this.props.data.url );
     }
     render(){
         console.log(this.props.data);

@@ -56,8 +56,8 @@
 }
 .viewedIcon{
     position: absolute;
-    right: 0;
-    bottom: 0;
-    color: purple;
-    filter: drop-shadow(1px 1px 3px white);
+    right: 1%;
+    bottom: 1%;
+    color: hotpink;
+    filter: drop-shadow(1px 1px 3px black);
 }
