@@ -1,0 +1,7 @@
+
+.articleContainer{
+  display: flex;
+}
+.articleColumn:nth-child(2){
+  margin-top: 100px;
+}
