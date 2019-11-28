@@ -19,7 +19,7 @@ class NewsArticle extends React.Component{
                     <div className="modalContent">
                         <a target="_blank" href={this.props.data.url} rel="noopener noreferrer">
                         <img alt={this.props.data.title} className="modalImage" src={this.props.data.urlToImage}/>
-                        { this.props.data.content}
+                        { this.props.data.content || this.props.data.description}
                         </a>
                     </div>
                 </div>
