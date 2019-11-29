@@ -59,15 +59,11 @@ class App extends React.Component{
   }
   render(){
     const data =this.state.data;
-    const columnPoints = Math.floor(data.length/3);
-    const dataDividedByThirds = [
-      this.state.data.slice(0, columnPoints+1),
-      this.state.data.slice(columnPoints+1, columnPoints*2+1),
-      this.state.data.slice(columnPoints*2+1)
-    ];
+    const breakLength = Math.floor(data.length/3) + data.length%3;
+
     return(
       <div className="articleContainer">
-        { dataDividedByThirds.map( (data, index)=> this.makeArticleColumn(data, index) )}
+        { data.map( articleData => <NewsArticle key={articleData.url} data={articleData} markCallback={this.markArticle} checkCallback={this.getArticleStatus}/>)}
       </div>
     )
   }

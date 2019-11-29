@@ -2,22 +2,96 @@ html{
   font-size: 2vmin;
 }
 .articleContainer{
+  column-count: 3;
+  column-gap: 0;
   display: flex;
+  flex-wrap: wrap;
 }
-.articleColumn{
+
+.article{
+  height: 25vh;
+  width: 33.3333%;
+  order: 2;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  break-inside: avoid;
+}
+.articleText{
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  background-color: rgba(136, 136, 136, 0.4);
+  padding: 3%;
+  filter: drop-shadow( 0px 0px 10px white);
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+  cursor: pointer;
+  transition-duration: .5s;
+}
+.article:hover .articleText{
+  background-color: rgba(136, 136, 136, 0);
+  color: white;
+  filter: drop-shadow( 0px 0px 10px black);
+}
+.modalShadow{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.6);
+  display: flex;
+  z-index: 1;
+}
+.modalBody{
+  margin: auto;
+  background-color: white;
+  border: 1px solid black;
+  min-height: 33%;
   position: relative;
 }
-.articleColumn:nth-child(2){
-  margin-top: 100px;
+.modalContent{
+  padding: 4em;
+  text-decoration: none;
 }
-.articleColumn:nth-child(2)::before{
-  content: 'news articles!';
+.modalImage{
+  width: 25%;
+  float: left;
+  margin-right: 2%;
+}
+.modalClose{
   position: absolute;
-  top: -100px;
-  background-color: lightblue;
-  text-align: center;
-  height: 100px;
-  width: 100%;
-  font-size: 2em;
-  line-height: 100px;
+  right: 0;
+  top: 0;
+  padding: 2%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+.viewedIcon{
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  color: hotpink;
+  filter: drop-shadow(1px 1px 3px black);
+}
+@media (max-width: 768px){
+  .articleContainer{
+    column-count: 2;
+  }
+  .article{
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px){
+  .articleContainer{
+    column-count: 1;
+  }
+  .article{
+    width: 100%;
+  }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './newsarticle.css';
 
 class NewsArticle extends React.Component{
     constructor( props ){
