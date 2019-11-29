@@ -46,11 +46,15 @@ class App extends React.Component{
   }
   render(){
     const data =this.state.data;
-    const breakLength = Math.floor(data.length/3) + data.length%3;
-
+    const breakLength = Math.floor(data.length/3)+data.length%3;
+    console.log('break: '+ breakLength);
+    const firstSection = data.slice(0,breakLength-1);
+    const remainingSections = data.slice(breakLength-1);
     return(
       <div className="articleContainer">
-        { data.map( articleData => <NewsArticle key={articleData.url} data={articleData} markCallback={this.markArticle} checkCallback={this.getArticleStatus}/>)}
+        { firstSection.map( articleData => <NewsArticle key={articleData.url} data={articleData} markCallback={this.markArticle} checkCallback={this.getArticleStatus}/>)}
+        <div className="title article">News!</div>
+        { remainingSections.map( articleData => <NewsArticle key={articleData.url} data={articleData} markCallback={this.markArticle} checkCallback={this.getArticleStatus}/>)}
       </div>
     )
   }
