@@ -18,7 +18,6 @@ class App extends React.Component{
     }
   }
   markArticle( articleURL ){
-    debugger;
     const articleData = JSON.parse( localStorage.articles );
     if(!articleData.hasOwnProperty( articleURL )){
       articleData[ articleURL ] = {
@@ -44,18 +43,6 @@ class App extends React.Component{
             data: response.articles
           })
         );
-  }
-  makeArticleColumn( data , index){
-    return (
-      <div className="articleColumn" key={index}>
-        {data.map( articleData => 
-          {
-            debugger;
-            return (<NewsArticle key={articleData.url} data={articleData} markCallback={this.markArticle} checkCallback={this.getArticleStatus}/>)
-          }
-        )}
-      </div>
-    );
   }
   render(){
     const data =this.state.data;
