@@ -4,14 +4,12 @@ html{
 .articleContainer{
   column-count: 3;
   column-gap: 0;
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
 }
 
 .article{
   height: 25vh;
-  width: 33.3333%;
-  order: 2;
+  width: 100%;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -78,20 +76,35 @@ html{
   color: hotpink;
   filter: drop-shadow(1px 1px 3px black);
 }
+.title{
+  height: 10vh;
+  background-color: lightblue;
+  text-align: center;
+  font-size: 3em;
+  line-height: 1.5em;
+}
 @media (max-width: 768px){
   .articleContainer{
     column-count: 2;
   }
-  .article{
+  .article:first-child{
+    margin-top: 10vh;
+  }
+  .title{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 50%;
   }
+
 }
 
 @media (max-width: 576px){
   .articleContainer{
     column-count: 1;
   }
-  .article{
+  .title{
     width: 100%;
   }
+
 }
