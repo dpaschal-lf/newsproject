@@ -86,6 +86,7 @@ html{
 @media (max-width: 768px){
   .articleContainer{
     column-count: 2;
+    font-size: 1.5em;
   }
   .article:first-child{
     margin-top: 10vh;
@@ -102,6 +103,7 @@ html{
 @media (max-width: 576px){
   .articleContainer{
     column-count: 1;
+    font-size: 2em;
   }
   .title{
     width: 100%;
